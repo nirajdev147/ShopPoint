@@ -204,8 +204,6 @@ const Signup = (props) => {
   const alert = (msg, type) => (
     <div className={`text-sm text-${type}-500`}>{msg}</div>
   );
-  const { enqueueSnackbar } = useSnackbar();
-
   const formSubmit = async () => {
     setData({ ...data, loading: true });
     if (data.cPassword !== data.password) {
