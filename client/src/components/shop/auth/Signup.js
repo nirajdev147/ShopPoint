@@ -186,7 +186,7 @@
 import React, { Fragment, useState } from "react";
 import { useSnackbar } from 'notistack';
 import { signupReq } from "./fetchApi";
-
+import { useSnackbar } from 'notistack';
 const Signup = (props) => {
   const { enqueueSnackbar } = useSnackbar(); // Use Notistack's hook
   const [data, setData] = useState({
@@ -198,6 +198,13 @@ const Signup = (props) => {
     loading: false,
     success: false,
   });
+
+
+
+  const alert = (msg, type) => (
+    <div className={`text-sm text-${type}-500`}>{msg}</div>
+  );
+  const { enqueueSnackbar } = useSnackbar();
 
   const formSubmit = async () => {
     setData({ ...data, loading: true });
@@ -237,7 +244,8 @@ const Signup = (props) => {
           cPassword: "",
           loading: false,
           error: false,
-        });
+        })
+        enqueueSnackbar('Account Created Successfully..!', { variant: 'success' })
       }
     } catch (error) {
       console.log(error);
