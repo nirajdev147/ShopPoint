@@ -15,23 +15,23 @@ export const cartList = () => {
 
 export const updateQuantity = (
   type,
-  totalQuantitiy,
-  quantitiy,
-  setQuantitiy,
+  totalQuantity,
+  quantity,
+  setQuantity,
   setAlertq
 ) => {
   if (type === "increase") {
-    if (quantitiy === totalQuantitiy) {
+    if (quantity === totalQuantity) {
       setAlertq(true);
     } else {
-      setQuantitiy(quantitiy + 1);
+      setQuantity(quantity + 1);
     }
   } else if (type === "decrease") {
-    if (quantitiy === 1) {
-      setQuantitiy(1);
+    if (quantity === 1) {
+      setQuantity(1);
       setAlertq(false);
     } else {
-      setQuantitiy(quantitiy - 1);
+      setQuantity(quantity - 1);
     }
   }
 };
@@ -63,10 +63,10 @@ export const inCart = (id) => {
 
 export const addToCart = (
   id,
-  quantitiy,
+  quantity,
   price,
   layoutDispatch,
-  setQuantitiy,
+  setQuantity,
   setAlertq,
   fetchData,
   totalCost
@@ -82,16 +82,16 @@ export const addToCart = (
       }
     });
     if (!isObj) {
-      cart.push({ id, quantitiy, price });
+      cart.push({ id, quantity, price });
       localStorage.setItem("cart", JSON.stringify(cart));
     }
   } else {
-    cart.push({ id, quantitiy, price });
+    cart.push({ id, quantity, price });
     localStorage.setItem("cart", JSON.stringify(cart));
   }
   layoutDispatch({ type: "inCart", payload: cartList() });
   layoutDispatch({ type: "cartTotalCost", payload: totalCost() });
-  setQuantitiy(1);
+  setQuantity(1);
   setAlertq(false);
   fetchData();
 };

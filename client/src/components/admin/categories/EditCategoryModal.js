@@ -54,7 +54,7 @@ const EditCategoryModal = (props) => {
       />
       {/* End Black Overlay */}
 
-      {/* Modal Start */}
+      {/* modal Start */}
       <div
         className={`${
           data.editCategoryModal.modal ? "" : "hidden"
@@ -65,7 +65,7 @@ const EditCategoryModal = (props) => {
             <span className="text-left font-semibold text-2xl tracking-wider">
               Add Category
             </span>
-            {/* Close Modal */}
+            {/* Close modal */}
             <span
               style={{ background: "#303031" }}
               onClick={(e) => dispatch({ type: "editCategoryModalClose" })}

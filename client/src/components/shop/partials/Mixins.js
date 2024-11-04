@@ -3,7 +3,7 @@ export const subTotal = (id, price) => {
   let carts = JSON.parse(localStorage.getItem("cart"));
   carts.forEach((item) => {
     if (item.id === id) {
-      subTotalCost = item.quantitiy * price;
+      subTotalCost = item.quantity * price;
     }
   });
   return subTotalCost;
@@ -14,7 +14,7 @@ export const quantity = (id) => {
   let carts = JSON.parse(localStorage.getItem("cart"));
   carts.forEach((item) => {
     if (item.id === id) {
-      product = item.quantitiy;
+      product = item.quantity;
     }
   });
   return product;
@@ -24,7 +24,7 @@ export const totalCost = () => {
   let totalCost = 0;
   let carts = JSON.parse(localStorage.getItem("cart"));
   carts.forEach((item) => {
-    totalCost += item.quantitiy * item.price;
+    totalCost += item.quantity * item.price;
   });
   return totalCost;
 };

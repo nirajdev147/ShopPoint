@@ -25,7 +25,7 @@ const ProductDetailsSection = (props) => {
   const [pImages, setPimages] = useState(null);
   const [count, setCount] = useState(0); // Slide change state
 
-  const [quantitiy, setQuantitiy] = useState(1); // Increse and decrese quantity state
+  const [quantity, setQuantity] = useState(1); // Increse and decrese quantity state
   const [, setAlertq] = useState(false); // Alert when quantity greater than stock
 
   const [wList, setWlist] = useState(
@@ -177,7 +177,7 @@ const ProductDetailsSection = (props) => {
               <div className="text-2xl tracking-wider">{sProduct.pName}</div>
               <div className="flex justify-between items-center">
                 <span className="text-xl tracking-wider text-yellow-700">
-                  ${sProduct.pPrice}.00
+                  Rs.{sProduct.pPrice}.00
                 </span>
                 <span>
                   <svg
@@ -219,19 +219,19 @@ const ProductDetailsSection = (props) => {
               {sProduct.pDescription}
             </div>
             <div className="my-4 md:my-6">
-              {+quantitiy === +sProduct.pQuantity ? (
+              {+quantity === +sProduct.pQuantity ? (
                 <span className="text-xs text-red-500">Stock limited</span>
               ) : (
                 ""
               )}
               <div
                 className={`flex justify-between items-center px-4 py-2 border ${
-                  +quantitiy === +sProduct.pQuantity && "border-red-500"
+                  +quantity === +sProduct.pQuantity && "border-red-500"
                 }`}
               >
                 <div
                   className={`${
-                    quantitiy === sProduct.pQuantity && "text-red-500"
+                    quantity === sProduct.pQuantity && "text-red-500"
                   }`}
                 >
                   Quantity
@@ -248,8 +248,8 @@ const ProductDetailsSection = (props) => {
                             updateQuantity(
                               "decrease",
                               sProduct.pQuantity,
-                              quantitiy,
-                              setQuantitiy,
+                              quantity,
+                              setQuantity,
                               setAlertq
                             )
                           }
@@ -267,14 +267,14 @@ const ProductDetailsSection = (props) => {
                             />
                           </svg>
                         </span>
-                        <span className="font-semibold">{quantitiy}</span>
+                        <span className="font-semibold">{quantity}</span>
                         <span
                           onClick={(e) =>
                             updateQuantity(
                               "increase",
                               sProduct.pQuantity,
-                              quantitiy,
-                              setQuantitiy,
+                              quantity,
+                              setQuantity,
                               setAlertq
                             )
                           }
@@ -309,7 +309,7 @@ const ProductDetailsSection = (props) => {
                             />
                           </svg>
                         </span>
-                        <span className="font-semibold">{quantitiy}</span>
+                        <span className="font-semibold">{quantity}</span>
                         <span>
                           <svg
                             className="w-5 h-5 fill-current cursor-not-allowed"
@@ -343,7 +343,7 @@ const ProductDetailsSection = (props) => {
                         />
                       </svg>
                     </span>
-                    <span className="font-semibold">{quantitiy}</span>
+                    <span className="font-semibold">{quantity}</span>
                     <span>
                       <svg
                         className="w-5 h-5 fill-current cursor-not-allowed"
@@ -378,10 +378,10 @@ const ProductDetailsSection = (props) => {
                       onClick={(e) =>
                         addToCart(
                           sProduct._id,
-                          quantitiy,
+                          quantity,
                           sProduct.pPrice,
                           layoutDispatch,
-                          setQuantitiy,
+                          setQuantity,
                           setAlertq,
                           fetchData,
                           totalCost

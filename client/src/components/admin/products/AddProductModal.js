@@ -170,6 +170,7 @@ const AddProductDetail = ({ categories }) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="price"
+                  min="0" 
                 />
               </div>
             </div>
@@ -285,6 +286,7 @@ const AddProductDetail = ({ categories }) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="quantity"
+                  min="0"
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1">
@@ -302,6 +304,7 @@ const AddProductDetail = ({ categories }) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="offer"
+                  min="0"
                 />
               </div>
             </div>

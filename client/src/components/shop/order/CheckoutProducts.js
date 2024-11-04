@@ -2,12 +2,11 @@ import React, { Fragment, useEffect, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { LayoutContext } from "../layout";
 import { subTotal, quantity, totalCost } from "../partials/Mixins";
-
 import { cartListProduct } from "../partials/FetchApi";
 import { getBrainTreeToken, getPaymentProcess } from "./FetchApi";
 import { fetchData, fetchbrainTree, pay } from "./Action";
-
 import DropIn from "braintree-web-drop-in-react";
+
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -48,7 +47,7 @@ export const CheckoutComponent = (props) => {
             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
           ></path>
         </svg>
-        Please wait untill finish
+        Please wait until finish
       </div>
     );
   }
@@ -77,7 +76,7 @@ export const CheckoutComponent = (props) => {
                   )}
                   <div className="flex flex-col py-2">
                     <label htmlFor="address" className="pb-2">
-                      Dalivery Address
+                      Delivery Address
                     </label>
                     <input
                       value={state.address}
@@ -110,8 +109,24 @@ export const CheckoutComponent = (props) => {
                       type="number"
                       id="phone"
                       className="border px-4 py-2"
-                      placeholder="+880"
+                      placeholder="+977"  
                     />
+
+                     <style>
+    {`
+      /* Hide up and down arrows in most browsers */
+      #phone::-webkit-inner-spin-button,
+      #phone::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      #phone {
+        -moz-appearance: textfield; /* Firefox */
+        appearance: textfield; /* Standard */
+      }
+    `}
+  </style>
                   </div>
                   <DropIn
                     options={{
@@ -186,17 +201,19 @@ const CheckoutProducts = ({ products }) => {
                     src={`${apiURL}/uploads/products/${product.pImages[0]}`}
                     alt="wishListproduct"
                   />
-                  <div className="text-lg md:ml-6 truncate">
-                    {product.pName}
+                  <div
+                    className="text-lg md:ml-6 truncate"
+                    style={{ minWidth: "ch", width: "45ch" }}
+                  >
+                    {product.pName.length > 45
+                      ? `${product.pName.substring(0, 45)}...`
+                      : product.pName.padEnd(45, "\u00A0")}
                   </div>
-                  <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${product.pPrice}.00{" "}
-                  </div>
-                  <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Quantitiy : {quantity(product._id)}
-                  </div>
-                  <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
+
+                  <div className="md:ml-6 font-semibold text-gray-600 text-sm ">
+                    Price : Rs.{product.pPrice}.00 <br />
+                    Quantity : {quantity(product._id)} <br />
+                    Subtotal : Rs.{subTotal(product._id, product.pPrice)}.00
                   </div>
                 </div>
               </div>

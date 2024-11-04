@@ -178,6 +178,7 @@ const EditProductModal = (props) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="price"
+                  min="0"
                 />
               </div>
             </div>
@@ -276,6 +277,7 @@ const EditProductModal = (props) => {
                   name="status"
                   className="px-4 py-2 border focus:outline-none"
                   id="status"
+                  min="0"
                 >
                   <option disabled value="">
                     Select a category
@@ -343,6 +345,7 @@ const EditProductModal = (props) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="offer"
+                  min="0"
                 />
               </div>
             </div>

@@ -137,11 +137,15 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
           {product.pDescription.slice(0, 15)}...
         </td>
         <td className="p-2 text-center">
-          <img
-            className="w-12 h-12 object-cover object-center"
-            src={`${apiURL}/uploads/products/${product.pImages[0]}`}
-            alt="pic"
-          />
+          {product && product.pImages && product.pImages[0] ? (
+            <img
+              className="w-12 h-12 object-cover object-center"
+              src={`${apiURL}/uploads/products/${product.pImages[0]}`}
+              alt="pic"
+            />
+          ) : (
+            <span>No image</span>
+          )}
         </td>
         <td className="p-2 text-center">
           {product.pStatus === "Active" ? (
@@ -155,7 +159,7 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
           )}
         </td>
         <td className="p-2 text-center">{product.pQuantity}</td>
-        <td className="p-2 text-center">{product.pCategory.cName}</td>
+        <td className="p-2 text-center">{product.pCategory ? product.pCategory.cName : 'N/A'}</td>
         <td className="p-2 text-center">{product.pOffer}</td>
         <td className="p-2 text-center">
           {moment(product.createdAt).format("lll")}

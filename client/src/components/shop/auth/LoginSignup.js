@@ -53,7 +53,7 @@ const LoginSignup = (props) => {
           >
             {loginValue}
           </div>
-          {/*  Modal Close Button */}
+      
           <div className="absolute top-0 right-0 mx-4">
             <svg
               onClick={(e) => {

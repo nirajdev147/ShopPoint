@@ -44,6 +44,10 @@ export const pay = async (
     setState({ ...state, error: "Please provide your address" });
   } else if (!state.phone) {
     setState({ ...state, error: "Please provide your phone number" });
+  } else if (state.phone.length !== 10) {
+    setState({ ...state, error: "Invalid phone number" });
+  } else if (!/^98/.test(state.phone)) {
+    setState({ ...state, error: "Invalid phone number" });
   } else {
     let nonce;
     state.instance

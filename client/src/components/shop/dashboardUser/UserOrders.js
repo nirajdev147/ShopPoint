@@ -38,7 +38,7 @@ const TableBody = ({ order }) => {
                   alt="productImage"
                 />
                 <span>{product.id.pName}</span>
-                <span>{product.quantitiy}x</span>
+                <span>{product.quantity}x</span>
               </span>
             );
           })}
@@ -71,7 +71,7 @@ const TableBody = ({ order }) => {
           )}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          ${order.amount}.00
+          Rs.{order.amount}.00
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>

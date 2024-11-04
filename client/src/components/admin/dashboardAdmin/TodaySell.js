@@ -89,7 +89,7 @@ const TodayOrderTable = ({ order }) => {
             return (
               <div key={index} className="flex space-x-2">
                 <span>{item.id.pName}</span>
-                <span>{item.quantitiy}x</span>
+                <span>{item.quantity}x</span>
               </div>
             );
           })}

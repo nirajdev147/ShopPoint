@@ -96,9 +96,24 @@ const ProfileComponent = () => {
                 onChange={(e) => setFdata({ ...fData, phone: e.target.value })}
                 value={fData.phone}
                 type="number"
-                id="number"
+                id="phone"
                 className="border px-4 py-2 w-full focus:outline-none"
               />
+               <style>
+    {`
+      /* Hide up and down arrows in most browsers */
+      #phone::-webkit-inner-spin-button,
+      #phone::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      #phone {
+        -moz-appearance: textfield; /* Firefox */
+        appearance: textfield; /* Standard */
+      }
+    `}
+  </style>
             </div>
             <div
               onClick={(e) => handleSubmit()}
