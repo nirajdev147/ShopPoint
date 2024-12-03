@@ -45,22 +45,44 @@
 
 Follow these steps to get your development environment up and running.
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
-```bash
+### Open your terminal or command prompt and run the following command to clone the repository:
+
 git clone https://github.com/nirajdev147/ShopPoint.git
-cd shop-point
+cd ShopPoint
+
+### 2. Set Up Environment Variables
+
+1. Open your terminal or cmd and navigate to the **server** directory:
+
+    ```bash
+    cd server
+    ```
+
+2. Create the `.env` file.
+
+3. Add the following environment variables to the `.env` file:
+
+    ```bash
+    DATABASE=enter_your_mongodb_database_id_here
+    PORT=8000
+    BRAINTREE_MERCHANT_ID=enter_your_braintree_merchant_id_here
+    BRAINTREE_PUBLIC_KEY=enter_your_braintree_public_key_here
+    BRAINTREE_PRIVATE_KEY=enter_your_braintree_private_key_here
+    ```
+
+    - Replace `enter_your_mongodb_database_id_here` with your actual MongoDB database ID or connection string.
+    - Replace `enter_your_braintree_merchant_id_here`, `enter_your_braintree_public_key_here`, and `enter_your_braintree_private_key_here` with your Braintree credentials.
+
+4. Save the `.env` file and run the development server
+
+### For Client:
+
+cd client && npm install
+
+### For Server:
+
+cd server && npm install
 
 
-Install Dependencies:
-For Backend (Node.js):
-Navigate to the **backend** directory and install the necessary dependencies:
-```bash
-cd server
-npm install
-
-
-For Frontend (React.js):Navigate to the **frontend** directory and install the necessary dependencies:
-```bash
-cd client
-npm install
