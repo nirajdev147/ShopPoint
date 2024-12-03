@@ -50,3 +50,22 @@ Follow these steps to get your development environment up and running.
 ```bash
 git clone https://github.com/nirajdev147/ShopPoint.git
 cd shop-point
+
+
+### 2. Install Dependencies
+
+#### For Backend (Node.js):
+Navigate to the **backend** directory and install the necessary dependencies:
+
+```bash
+cd server
+npm install
+
+### 2. Install Dependencies
+
+#### For Frontend (React.js):
+Navigate to the **frontend** directory and install the necessary dependencies:
+
+```bash
+cd client
+npm install
