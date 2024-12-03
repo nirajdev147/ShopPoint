@@ -93,4 +93,17 @@ cd ShopPoint
 ```bash
     cd client
     npm install
+```
 
+## Screenshots
+
+Here’s a screenshot of the project in action:
+
+### User:
+<img src="/images/registerpage.png">
+<img src="/images/loginpage.png">
+<img src="/images/homepage.png">
+<img src="/images/category.png">
+
+### Admin:
+<img src="/images/AdminDashboard.png">
