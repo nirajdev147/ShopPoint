@@ -162,7 +162,6 @@ const Login = (props) => {
     }
   }, []);
 
-  const { enqueueSnackbar } = useSnackbar();
 
   const formSubmit = async () => {
     setData((prevData) => ({ ...prevData, loading: true }));

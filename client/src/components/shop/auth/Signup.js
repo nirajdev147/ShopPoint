@@ -186,7 +186,6 @@
 import React, { Fragment, useState } from "react";
 import { useSnackbar } from 'notistack';
 import { signupReq } from "./fetchApi";
-import { useSnackbar } from 'notistack';
 const Signup = (props) => {
   const { enqueueSnackbar } = useSnackbar(); // Use Notistack's hook
   const [data, setData] = useState({
