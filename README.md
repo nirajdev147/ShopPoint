@@ -49,8 +49,10 @@ Follow these steps to get your development environment up and running.
 
 ### Open your terminal or command prompt and run the following command to clone the repository:
 
-1.  git clone https://github.com/nirajdev147/ShopPoint.git
-2.  cd ShopPoint
+```bash
+git clone https://github.com/nirajdev147/ShopPoint.git
+cd ShopPoint
+```
 
 ### 2. Set Up Environment Variables
 
@@ -79,13 +81,16 @@ Follow these steps to get your development environment up and running.
 
 ## 3. Run the development server
 
-### For Server & Client:
+### For Server:
 
 ```bash
     cd server
     npm install
 ```
 
+### For Client:
+
 ```bash
     cd client
     npm install
+
