@@ -77,12 +77,15 @@ cd ShopPoint
 
 4. Save the `.env` file and run the development server
 
-### 3. For Client:
+### For Server & client:
 
-cd client && npm install
+ ```bash
+    cd server && npm install
+    ```
 
-### 4. For Server:
+ ```bash
+    cd client && npm install
+    ```
 
-cd server && npm install
 
 
