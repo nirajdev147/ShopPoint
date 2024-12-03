@@ -1,6 +1,6 @@
-# Shop Point - ECommerce Website
+# shop-point - An e-Commerce Website
 
-**Shop Point** is an eCommerce website that allows users to browse products, add them to their cart, and complete the checkout process using Visa. Admins can manage categories, products, orders, and users through a dedicated dashboard.
+**shop-point** is an eCommerce website that allows users to browse products, add them to their cart, and complete the checkout process using Visa. Admins can manage categories, products, orders, and users through a dedicated dashboard.
 
 ## Features
 
@@ -23,20 +23,20 @@
 
 ## Technology Stack
 
-- **Frontend**: React.js (or Vue.js, Angular)
-- **Backend**: Node.js with Express.js (or Django)
-- **Database**: MongoDB (or PostgreSQL)
-- **Authentication**: JWT or sessions
-- **Payment Integration**: Stripe (or PayPal) for Visa card payments
-- **Admin Dashboard**: Custom admin panel (built with React.js)
+- **Frontend**: React.js 
+- **Backend**: Node.js with Express.js 
+- **Database**: MongoDB 
+- **Authentication**: JWT token for authentication
+- **Payment Integration**: PayPal for Visa card payments
+- **Admin Dashboard**: Custom admin panel 
 
 ---
 
 ## Prerequisites
 
-- Node.js (LTS version)
-- MongoDB or PostgreSQL database
-- Stripe or PayPal account for payment processing
+- Node.js 
+- MongoDB 
+- PayPal account for payment processing
 - Git for version control
 
 ---
@@ -48,5 +48,5 @@ Follow these steps to get your development environment up and running.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/shop-point.git
+git clone https://github.com/nirajdev147/ShopPoint.git
 cd shop-point
