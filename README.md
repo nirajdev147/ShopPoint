@@ -99,16 +99,18 @@ cd ShopPoint
 
 Here’s a screenshot of the project in action:
 
-Register
+### Register
 <img src="client/public/images/registerpage.png">
-<br>
-Login
+
+### Login
 <img src="client/public/images/loginpage.png">
-<br>
-Homepage
+
+
+### Homepage
 <img src="client/public/images/homepage.png">
-<br>
-Category
+
+
+### Category
 <img src="client/public/images/category.png">
 
 ### Admin Dashboard:
