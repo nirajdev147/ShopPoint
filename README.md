@@ -100,10 +100,10 @@ cd ShopPoint
 Here’s a screenshot of the project in action:
 
 ### User:
-<img src="client/public/images/AdminDashboard.png">
+<img src="client/public/images/registerpage.png">
 <img src="client/public/images/loginpage.png">
 <img src="client/public/images/homepage.png">
 <img src="client/public/images/category.png">
 
-### Admin:
+### Admin Dashboard:
 <img src="client/public/images/AdminDashboard.png">
