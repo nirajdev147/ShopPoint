@@ -89,8 +89,3 @@ cd ShopPoint
 ```bash
     cd client
     npm install
-
-
-
-
-
