@@ -75,17 +75,13 @@ cd ShopPoint
     - Replace `enter_your_mongodb_database_id_here` with your actual MongoDB database ID or connection string.
     - Replace `enter_your_braintree_merchant_id_here`, `enter_your_braintree_public_key_here`, and `enter_your_braintree_private_key_here` with your Braintree credentials.
 
-4. Save the `.env` file and run the development server
+4. Save the `.env` file.
 
-### For Server & client:
+## Run the development server
+
+### For Server:
 
  ```bash
     cd server && npm install
-    ```
-
- ```bash
-    cd client && npm install
-    ```
-
 
 
