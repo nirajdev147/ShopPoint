@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-// Import Router
+// Import Routers
 const authRouter = require("./routes/auth");
 const categoryRouter = require("./routes/categories");
 const productRouter = require("./routes/products");
@@ -14,26 +14,13 @@ const brainTreeRouter = require("./routes/braintree");
 const orderRouter = require("./routes/orders");
 const usersRouter = require("./routes/users");
 const customizeRouter = require("./routes/customize");
-// Import Auth middleware for check user login or not~
+
+// Auth middleware
 const { loginCheck } = require("./middleware/auth");
 const CreateAllFolder = require("./config/uploadFolderCreateScript");
 
-/* Create All Uploads Folder if not exists | For Uploading Images */
+// Create upload folders
 CreateAllFolder();
-
-// Database Connection
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(() =>
-    console.log(
-      "==============Mongodb Database Connected Successfully=============="
-    )
-  )
-  .catch((err) => console.log("Database Not Connected !!!"));
 
 // Middleware
 app.use(morgan("dev"));
@@ -52,10 +39,28 @@ app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 
-// // Run Server
-// const PORT = process.env.PORT || 8000;
-// app.listen(PORT, () => {
-//   console.log("Server is running on ", PORT);
-// });
+// MongoDB Connection (async + proper error logging)
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("✅ MongoDB Connected Successfully");
+  } catch (err) {
+    console.error("❌ MongoDB Connection Failed:", err);
+    throw err; // Important for Vercel to know the function failed
+  }
+};
 
+// Connect to DB immediately
+connectDB();
+
+// Global error handler (optional but helps debugging)
+app.use((err, req, res, next) => {
+  console.error("Internal Server Error:", err);
+  res.status(500).json({ message: "Server Error", error: err.toString() });
+});
+
+// Export app for Vercel Serverless
 module.exports = app;
