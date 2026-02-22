@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
-try {
-  mongoose.connect("mongodb+srv://devniraj4:5802@cluster0.efnpe0a.mongodb.net/ecomwebsite", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  });
-  console.log("Database Connected Successfully");
-} catch (err) {
-  console.log("Database Not Connected");
-}
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("✅ Database Connected Successfully");
+  } catch (err) {
+    console.error("❌ Database Connection Failed:", err);
+    throw err; // Important: lets Vercel know the function failed
+  }
+};
+
+module.exports = connectDB;
